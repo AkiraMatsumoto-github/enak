@@ -40,21 +40,21 @@
 **Goal**: 主要ページを実装し、動的コンテンツを表示できるようにする。
 
 *   **microCMS Integration**
-    *   [ ] microCMS サービス作成
-    *   [ ] APIスキーマ定義: 「お知らせ (news)」(title, content, date, category)
-    *   [ ] `.env` ファイル作成 (API Key設定)
-    *   [ ] `src/utils/microcms.ts` (SDKを使用したクライアント) の実装
+    *   [x] microCMS サービス作成
+    *   [x] APIスキーマ定義: 「お知らせ (news)」(title, content, date, category)
+    *   [x] `.env` ファイル作成 (API Key設定)
+    *   [x] `src/utils/microcms.ts` (SDKを使用したクライアント) の実装
 *   **Top Page (`index.astro`)**
-    *   [ ] **Hero Section**: キャッチコピーとメインビジュアル、CTAボタン(面談予約)の実装
-    *   [ ] **Concept Section**: 「ennaについて」のメッセージ実装
-    *   [ ] **Features Section**: 「3つの強み」をカードデザイン等で実装 (Activityへの導線含む)
-    *   [ ] **Service Summary**: サービス概要へのリンク導線
-    *   [ ] **Flow & FAQ Section**: 利用の流れ(3ステップ)とFAQ(アコーディオン)の実装
-    *   [ ] **News Section**: microCMSから最新3件取得・表示
+    *   [x] **Hero Section**: キャッチコピーとメインビジュアル、CTAボタン(面談予約)の実装
+    *   [x] **Concept Section**: 「ennaについて」のメッセージ実装
+    *   [x] **Features Section**: 「3つの強み」をカードデザイン等で実装 (Activityへの導線含む)
+    *   [x] **Service Summary**: サービス概要へのリンク導線
+    *   [x] **Flow & FAQ Section**: 利用の流れ(3ステップ)とFAQ(アコーディオン)の実装
+    *   [x] **News Section**: microCMSから最新3件取得・表示
 *   **Sub Pages**
-    *   [ ] **Profile Page**: 経歴タイムライン、資格リスト、想いテキストの実装
-    *   [ ] **Service Page**: 料金表(Table)、オプションリスト、アクティビティページへのバナー実装
-    *   [ ] **Activity Page**: 小麦粉粘土・手形アート等の詳細紹介、ギャラリー実装
+    *   [x] **Profile Page**: 経歴タイムライン、資格リスト、想いテキストの実装
+    *   [x] **Service Page**: 料金表(Table)、オプションリスト、アクティビティページへのバナー実装
+    *   [x] **Activity Page**: 小麦粉粘土・手形アート等の詳細紹介、ギャラリー実装
 
 ### Phase 3: インタラクション & フォーム
 **Goal**: ユーザーが問い合わせ可能で、触り心地の良いサイトにする。

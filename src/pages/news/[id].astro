@@ -1,30 +1,33 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/common/Header.astro';
-import Footer from '../../components/common/Footer.astro';
-import { getNews, getNewsDetail } from '../../utils/microcms';
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/common/Header.astro";
+import Footer from "../../components/common/Footer.astro";
+import { getNews, getNewsDetail } from "../../utils/microcms";
 
 export async function getStaticPaths() {
-  const response = await getNews({ fields: ["id"] });
-  return response.contents.map((content) => ({
-    params: {
-      id: content.id,
-    },
-  }));
+    const response = await getNews({ fields: ["id"] });
+    return response.contents.map((content) => ({
+        params: {
+            id: content.id,
+        },
+    }));
 }
 
 const { id } = Astro.params;
 const news = await getNewsDetail(id as string);
 ---
 
-<Layout title={`${news.title} | お知らせ | enna`}>
-	<Header />
-	
-	<main class="flex-1 pt-16">
+<Layout title={`${news.title} | お知らせ | enak`}>
+    <Header />
+
+    <main class="flex-1 pt-16">
         <div class="max-w-screen-md mx-auto px-5 py-20">
             <!-- Breadcrumb / Back -->
             <div class="mb-8">
-                <a href="/" class="text-sm text-gray-400 hover:text-brand-main transition-colors">
+                <a
+                    href="/"
+                    class="text-sm text-gray-400 hover:text-brand-main transition-colors"
+                >
                     &lt; トップページへ戻る
                 </a>
             </div>
@@ -32,33 +35,45 @@ const news = await getNewsDetail(id as string);
             <!-- News Header -->
             <div class="mb-10 pb-8 border-b border-gray-200">
                 <div class="flex items-center gap-4 mb-4">
-                    <time class="text-gray-400 font-en" datetime={news.published}>
-                        {new Date(news.published).toLocaleDateString('ja-JP')}
+                    <time
+                        class="text-gray-400 font-en"
+                        datetime={news.published}
+                    >
+                        {new Date(news.published).toLocaleDateString("ja-JP")}
                     </time>
-                    {news.category && news.category.length > 0 && (
-                        <span class="text-xs bg-brand-sub/20 text-brand-sub px-2 py-1 rounded-md font-bold">
-                            {news.category[0]}
-                        </span>
-                    )}
+                    {
+                        news.category && news.category.length > 0 && (
+                            <span class="text-xs bg-brand-sub/20 text-brand-sub px-2 py-1 rounded-md font-bold">
+                                {news.category[0]}
+                            </span>
+                        )
+                    }
                 </div>
-                <h1 class="text-2xl md:text-3xl font-bold text-brand-accent leading-relaxed">
+                <h1
+                    class="text-2xl md:text-3xl font-bold text-brand-accent leading-relaxed"
+                >
                     {news.title}
                 </h1>
             </div>
 
             <!-- Content -->
-            <div class="prose prose-stone max-w-none prose-a:text-brand-main prose-headings:text-brand-accent">
+            <div
+                class="prose prose-stone max-w-none prose-a:text-brand-main prose-headings:text-brand-accent"
+            >
                 <div set:html={news.content} />
             </div>
 
             <!-- Bottom Back Link -->
             <div class="mt-16 text-center">
-                <a href="/" class="inline-block bg-white border border-brand-light text-brand-text font-bold py-3 px-8 rounded-full hover:bg-brand-base hover:border-brand-main transition-all shadow-sm">
+                <a
+                    href="/"
+                    class="inline-block bg-white border border-brand-light text-brand-text font-bold py-3 px-8 rounded-full hover:bg-brand-base hover:border-brand-main transition-all shadow-sm"
+                >
                     トップページへ戻る
                 </a>
             </div>
         </div>
     </main>
 
-	<Footer />
+    <Footer />
 </Layout>

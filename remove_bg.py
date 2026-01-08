@@ -19,7 +19,8 @@ def remove_white_background(input_path, output_path):
     print("Background removed successfully.")
 
 if __name__ == "__main__":
-    remove_white_background(
-        "/Users/matsumotoakira/Documents/Private_development/enna/public/images/floating_baby.png",
-        "/Users/matsumotoakira/Documents/Private_development/enna/public/images/floating_baby_transparent.png"
-    )
+    import sys
+    if len(sys.argv) > 2:
+        remove_white_background(sys.argv[1], sys.argv[2])
+    else:
+        print("Usage: python remove_bg.py <input_path> <output_path>")

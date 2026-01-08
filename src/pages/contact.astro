@@ -2,9 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/common/Header.astro";
 import Footer from "../components/common/Footer.astro";
+import Schedule from "../components/features/Schedule.astro";
 ---
 
-<Layout title="お問い合わせ | enna">
+<Layout title="お問い合わせ | enak">
     <Header />
 
     <main class="flex-1 pt-16">
@@ -19,6 +20,19 @@ import Footer from "../components/common/Footer.astro";
         </div>
 
         <div class="max-w-screen-md mx-auto px-5 py-20">
+            <!-- Schedule Section -->
+            <section class="mb-16 text-center">
+                <h2
+                    class="text-xl md:text-2xl font-bold text-brand-accent mb-4"
+                >
+                    ご予約可能スケジュール
+                </h2>
+                <p class="text-brand-text/80 text-sm mb-6">
+                    最新の空き状況です。ご確認の上、お問い合わせください。
+                </p>
+                <Schedule />
+            </section>
+
             <!-- LINE Section (Recommended) -->
             <section
                 class="bg-white border-2 border-[#06C755] rounded-3xl p-8 md:p-10 text-center mb-16 shadow-sm relative overflow-hidden"
@@ -97,7 +111,7 @@ import Footer from "../components/common/Footer.astro";
                             id="email"
                             name="email"
                             required
-                            placeholder="例: example@enna.com"
+                            placeholder="例: example@enak.com"
                             class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-main focus:ring-1 focus:ring-brand-main outline-none transition-colors bg-brand-base/20"
                         />
                     </div>

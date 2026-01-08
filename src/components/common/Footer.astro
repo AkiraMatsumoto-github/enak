@@ -1,10 +1,10 @@
 ---
 const navItems = [
-	{ name: 'Top', href: '/' },
-	{ name: 'Profile', href: '/profile' },
-	{ name: 'Service', href: '/service' },
-	{ name: 'Activity', href: '/activity' },
-	{ name: 'Contact', href: '/contact' },
+	{ name: "Top", href: "/" },
+	{ name: "Profile", href: "/profile" },
+	{ name: "Service", href: "/service" },
+	{ name: "Activity", href: "/activity" },
+	{ name: "Contact", href: "/contact" },
 ];
 ---
 
@@ -12,22 +12,33 @@ const navItems = [
 	<div class="max-w-screen-xl mx-auto px-5 flex flex-col items-center gap-8">
 		<!-- Logo -->
 		<a href="/" class="flex flex-col items-center gap-2 group">
-			<img src="/logo.png" alt="enna" class="h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity" />
-			<p class="text-xs text-brand-accent/70 font-jp tracking-wider">ママと赤ちゃんを包み込む、プロフェッショナルの温もり</p>
+			<img
+				src="/logo.png"
+				alt="enak"
+				class="h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+			/>
+			<p class="text-xs text-brand-accent/70 font-jp tracking-wider">
+				ママと赤ちゃんを包み込む、プロフェッショナルの温もり
+			</p>
 		</a>
 
 		<!-- Nav -->
 		<nav class="flex flex-wrap justify-center gap-6 md:gap-10">
-			{navItems.map(item => (
-				<a href={item.href} class="text-brand-text/80 font-jp text-sm hover:text-brand-main transition-colors">
-					{item.name}
-				</a>
-			))}
+			{
+				navItems.map((item) => (
+					<a
+						href={item.href}
+						class="text-brand-text/80 font-jp text-sm hover:text-brand-main transition-colors"
+					>
+						{item.name}
+					</a>
+				))
+			}
 		</nav>
 
 		<!-- Copyright -->
 		<p class="text-[10px] text-gray-400 font-en tracking-wide mt-4">
-			&copy; {new Date().getFullYear()} enna. All Rights Reserved.
+			&copy; {new Date().getFullYear()} enak. All Rights Reserved.
 		</p>
 	</div>
 </footer>
