@@ -1,43 +1,45 @@
-# Astro Starter Kit: Minimal
+# enna - フリーランス保育士サービス公式サイト
 
-```sh
-npm create astro@latest -- --template minimal
-```
+「ママと赤ちゃんを包み込む、プロフェッショナルの温もり」を提供する、信頼あるフリーランス保育士サービス「enna」の公式サイトリポジトリです。
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📖 プロジェクト概要
+東京・神奈川エリアを中心に、産後ケア施設勤務・保育士歴13年の経験を活かした、新生児・0歳児特化型のシッティングサービスを提供します。
+本サイトは、サービスの理念、信頼性、独自のアクティビティ（わらべうたベビーマッサージ、手形足形アートなど）を伝え、事前面談への申し込みを促進することを目的としています。
 
-## 🚀 Project Structure
+## 🛠 技術スタック
+- **Framework**: [Astro](https://astro.build/) - 高速なパフォーマンスとSEOに優れた静的サイト生成(SSG)
+- **Styling**: [TailwindCSS](https://tailwindcss.com/) - ユーティリティファーストなスタイリング
+- **CMS**: [microCMS](https://microcms.io/) - お知らせ等の動的コンテンツ管理
+- **Deployment**: Vercel
 
-Inside of your Astro project, you'll see the following folders and files:
-
+## 📂 ディレクトリ構成
 ```text
 /
-├── public/
+├── public/          # 静的アセット (画像、favicon等)
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/  # 再利用可能なUIコンポーネント
+│   ├── layouts/     # 共通レイアウト (Metaタグ, Header, Footer)
+│   ├── pages/       # ページコンポーネント (ルーティング)
+│   ├── styles/      # グローバルスタイル (Tailwind設定含む)
+│   └── utils/       # ユーティリティ関数 (microCMSクライアント等)
+└── astro.config.mjs # Astro設定ファイル
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🧞‍♂️ 開発コマンド
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+プロジェクトのルートディレクトリで実行してください。
 
-Any static assets, like images, can be placed in the `public/` directory.
+| コマンド | アクション |
+| :--- | :--- |
+| `npm install` | 依存関係のインストール |
+| `npm run dev` | ローカル開発サーバーの起動 (`localhost:4321`) |
+| `npm run build` | 本番用ビルドの作成 (`./dist/`) |
+| `npm run preview` | ビルドしたサイトのローカルプレビュー |
 
-## 🧞 Commands
+## 🎨 デザインコンセプト
+- **テーマ**: ママと赤ちゃんを包み込む、プロフェッショナルの温もり
+- **カラー**: アイボリー、落ち着いたピンク、チャコール
+- **フォント**: Zen Maru Gothic (親しみやすさ), Outfit (洗練)
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## � ライセンス
+Private Project
