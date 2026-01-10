@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/common/Header.astro";
 import Footer from "../components/common/Footer.astro";
 
+import PriceSimulator from "../components/features/PriceSimulator.astro";
+
 const basicPrice = {
     price: "2,800",
     unit: "円 / 1時間",
@@ -99,31 +101,30 @@ const options = [
                                             <div
                                                 class="flex flex-col md:flex-row md:items-center justify-between gap-1"
                                             >
-                                                <span class="font-bold"
-                                                    >① 早朝（6:00〜9:00）</span
+                                                <span>① 早朝（6:00〜9:00）</span
                                                 >
                                                 <span class="font-bold"
-                                                    >基本料金 + 300円 / 1時間</span
+                                                    >+ 300円 / 1時間</span
                                                 >
                                             </div>
                                             <div
                                                 class="flex flex-col md:flex-row md:items-center justify-between gap-1"
                                             >
-                                                <span class="font-bold"
+                                                <span
                                                     >② 夕方（18:00〜20:00）</span
                                                 >
                                                 <span class="font-bold"
-                                                    >基本料金 + 300円 / 1時間</span
+                                                    >+ 300円 / 1時間</span
                                                 >
                                             </div>
                                             <div
                                                 class="flex flex-col md:flex-row md:items-center justify-between gap-1"
                                             >
-                                                <span class="font-bold"
+                                                <span
                                                     >③ 夜間（20:00〜23:00）</span
                                                 >
                                                 <span class="font-bold"
-                                                    >基本料金 + 500円 / 1時間</span
+                                                    >+ 500円 / 1時間</span
                                                 >
                                             </div>
                                         </div>
@@ -140,17 +141,10 @@ const options = [
                                             <div
                                                 class="flex flex-col md:flex-row md:items-center justify-between gap-1"
                                             >
-                                                <span class="font-bold"
-                                                    >2人目：基本料金 +
-                                                    500円/1時間</span
+                                                <span>2人目以降：1人につき</span
                                                 >
-                                            </div>
-                                            <div
-                                                class="flex flex-col md:flex-row md:items-center justify-between gap-1"
-                                            >
-                                                <span class="font-bold"
-                                                    >3人目：基本料金 +
-                                                    1000円/1時間</span
+                                                <span class="font-bold">
+                                                    + 500円/1時間</span
                                                 >
                                             </div>
                                         </div>
@@ -165,7 +159,7 @@ const options = [
                                     <td
                                         class="py-4 pr-0 pl-4 text-brand-text font-bold"
                                     >
-                                        1000円 / 1回
+                                        基本料金に20%加算
                                     </td>
                                 </tr>
                                 <tr class="divide-x divide-brand-light">
@@ -174,23 +168,15 @@ const options = [
                                     >
                                         遠方
                                     </td>
-                                    <td
-                                        class="py-4 pr-0 pl-4 text-brand-text font-bold"
-                                    >
-                                        1000円 /
-                                        1回（サポーター自宅より片道45分以上）
-                                    </td>
-                                </tr>
-                                <tr class="divide-x divide-brand-light">
-                                    <td
-                                        class="bg-brand-base/20 py-4 pr-4 pl-0 font-bold text-brand-accent"
-                                    >
-                                        延長
-                                    </td>
-                                    <td
-                                        class="py-4 pr-0 pl-4 text-brand-text font-bold"
-                                    >
-                                        15分単位での加算（割増なし）
+                                    <td>
+                                        <span
+                                            class="py-4 pr-0 pl-4 text-brand-text font-bold"
+                                        >
+                                            1000円 /1回
+                                        </span>
+                                        <span>
+                                            （サポーター最寄駅より片道45分以上）
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr class="divide-x divide-brand-light">
@@ -201,8 +187,7 @@ const options = [
                                     </td>
                                     <td class="py-4 pr-0 pl-4 text-brand-text">
                                         <div class="font-bold mb-2">
-                                            + 500円 /
-                                            1時間（初回シッティングが病児保育の場合）
+                                            + 500円 / 1時間
                                         </div>
                                         <div
                                             class="text-xs text-gray-500 space-y-1"
@@ -329,6 +314,8 @@ const options = [
                     </div>
                 </div>
             </div>
+
+            <PriceSimulator />
 
             <!-- Area & Campaign -->
             <div class="mb-16">
