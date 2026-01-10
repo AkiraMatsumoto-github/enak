@@ -79,22 +79,143 @@ const options = [
                 </div>
 
                 <div
-                    class="bg-white rounded-2xl shadow-sm border border-brand-light overflow-hidden"
+                    class="bg-white rounded-2xl shadow-sm border border-brand-light overflow-hidden p-6 md:p-10"
                 >
-                    {
-                        options.map((option, index) => (
-                            <div
-                                class={`flex flex-col md:flex-row justify-between items-center p-4 md:p-6 ${index !== options.length - 1 ? "border-b border-brand-light" : ""}`}
+                    <div class="overflow-x-auto">
+                        <table
+                            class="w-full text-sm md:text-base border-collapse min-w-[500px]"
+                        >
+                            <tbody
+                                class="divide-y divide-brand-light border-y border-brand-light"
                             >
-                                <div class="font-bold text-brand-accent mb-1 md:mb-0">
-                                    {option.label}
-                                </div>
-                                <div class="text-brand-main font-bold">
-                                    {option.price}
-                                </div>
-                            </div>
-                        ))
-                    }
+                                <tr class="divide-x divide-brand-light">
+                                    <td
+                                        class="bg-brand-base/20 py-4 pr-4 pl-0 font-bold text-brand-accent w-2/9 align-top"
+                                    >
+                                        時間帯
+                                    </td>
+                                    <td class="py-4 pr-0 pl-4 text-brand-text">
+                                        <div class="space-y-3">
+                                            <div
+                                                class="flex flex-col md:flex-row md:items-center justify-between gap-1"
+                                            >
+                                                <span class="font-bold"
+                                                    >① 早朝（6:00〜9:00）</span
+                                                >
+                                                <span class="font-bold"
+                                                    >基本料金 + 300円 / 1時間</span
+                                                >
+                                            </div>
+                                            <div
+                                                class="flex flex-col md:flex-row md:items-center justify-between gap-1"
+                                            >
+                                                <span class="font-bold"
+                                                    >② 夕方（18:00〜20:00）</span
+                                                >
+                                                <span class="font-bold"
+                                                    >基本料金 + 300円 / 1時間</span
+                                                >
+                                            </div>
+                                            <div
+                                                class="flex flex-col md:flex-row md:items-center justify-between gap-1"
+                                            >
+                                                <span class="font-bold"
+                                                    >③ 夜間（20:00〜23:00）</span
+                                                >
+                                                <span class="font-bold"
+                                                    >基本料金 + 500円 / 1時間</span
+                                                >
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="divide-x divide-brand-light">
+                                    <td
+                                        class="bg-brand-base/20 py-4 pr-4 pl-0 font-bold text-brand-accent align-top"
+                                    >
+                                        人数
+                                    </td>
+                                    <td class="py-4 pr-0 pl-4 text-brand-text">
+                                        <div class="space-y-3">
+                                            <div
+                                                class="flex flex-col md:flex-row md:items-center justify-between gap-1"
+                                            >
+                                                <span class="font-bold"
+                                                    >2人目：基本料金 +
+                                                    500円/1時間</span
+                                                >
+                                            </div>
+                                            <div
+                                                class="flex flex-col md:flex-row md:items-center justify-between gap-1"
+                                            >
+                                                <span class="font-bold"
+                                                    >3人目：基本料金 +
+                                                    1000円/1時間</span
+                                                >
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="divide-x divide-brand-light">
+                                    <td
+                                        class="bg-brand-base/20 py-4 pr-4 pl-0 font-bold text-brand-accent"
+                                    >
+                                        土日祝
+                                    </td>
+                                    <td
+                                        class="py-4 pr-0 pl-4 text-brand-text font-bold"
+                                    >
+                                        1000円 / 1回
+                                    </td>
+                                </tr>
+                                <tr class="divide-x divide-brand-light">
+                                    <td
+                                        class="bg-brand-base/20 py-4 pr-4 pl-0 font-bold text-brand-accent"
+                                    >
+                                        遠方
+                                    </td>
+                                    <td
+                                        class="py-4 pr-0 pl-4 text-brand-text font-bold"
+                                    >
+                                        1000円 /
+                                        1回（サポーター自宅より片道45分以上）
+                                    </td>
+                                </tr>
+                                <tr class="divide-x divide-brand-light">
+                                    <td
+                                        class="bg-brand-base/20 py-4 pr-4 pl-0 font-bold text-brand-accent"
+                                    >
+                                        延長
+                                    </td>
+                                    <td
+                                        class="py-4 pr-0 pl-4 text-brand-text font-bold"
+                                    >
+                                        15分単位での加算（割増なし）
+                                    </td>
+                                </tr>
+                                <tr class="divide-x divide-brand-light">
+                                    <td
+                                        class="bg-brand-base/20 py-4 pr-4 pl-0 font-bold text-brand-accent align-top"
+                                    >
+                                        病児保育
+                                    </td>
+                                    <td class="py-4 pr-0 pl-4 text-brand-text">
+                                        <div class="font-bold mb-2">
+                                            + 500円 /
+                                            1時間（初回シッティングが病児保育の場合）
+                                        </div>
+                                        <div
+                                            class="text-xs text-gray-500 space-y-1"
+                                        >
+                                            <p>
+                                                ※通常シッティングを利用されたことがあるご家庭は割増なし
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
