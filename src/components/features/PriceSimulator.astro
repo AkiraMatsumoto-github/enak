@@ -103,6 +103,28 @@
                     </label>
                     <div class="space-y-2">
                         <label
+                            class="flex items-center gap-3 p-3 bg-blue-50 border border-blue-100 rounded-lg cursor-pointer hover:bg-blue-100 transition-colors"
+                        >
+                            <input
+                                type="checkbox"
+                                id="is-local-campaign"
+                                class="w-5 h-5 text-blue-500 rounded border-blue-300 focus:ring-blue-500"
+                            />
+                            <div class="flex-1">
+                                <span
+                                    class="font-bold text-blue-600 block text-xs md:text-sm"
+                                    >近隣エリア限定キャンペーン</span
+                                >
+                                <span class="text-[10px] text-blue-400 block"
+                                    >宮前区・青葉区の一部エリア</span
+                                >
+                            </div>
+                            <span
+                                class="text-xs text-blue-600 font-bold whitespace-nowrap"
+                                >-300円/h</span
+                            >
+                        </label>
+                        <label
                             class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-brand-base/10 transition-colors"
                         >
                             <input
@@ -198,6 +220,9 @@
     ) as HTMLInputElement;
     const isSickCheckbox = document.getElementById(
         "is-sick",
+    ) as HTMLInputElement;
+    const isLocalCampaignCheckbox = document.getElementById(
+        "is-local-campaign",
     ) as HTMLInputElement;
     const totalPriceDisplay = document.getElementById(
         "total-price",
@@ -326,7 +351,13 @@
 
         // Price Calc
         // Base Hourly Rate (Base + Sibling + Sick)
-        let hourlyRate = BASE_RATE;
+        // 近隣エリアキャンペーン適用時は基本料金から300円引き
+        let currentBaseRate = BASE_RATE;
+        if (isLocalCampaignCheckbox.checked) {
+            currentBaseRate -= 300;
+        }
+
+        let hourlyRate = currentBaseRate;
 
         // Sibling Surcharge (+500 per additional child)
         if (childrenCount > 1) {
@@ -371,6 +402,7 @@
     isWeekendCheckbox.addEventListener("change", calculatePrice);
     isRemoteCheckbox.addEventListener("change", calculatePrice);
     isSickCheckbox.addEventListener("change", calculatePrice);
+    isLocalCampaignCheckbox.addEventListener("change", calculatePrice);
 
     // Init
     initTimeOptions();
