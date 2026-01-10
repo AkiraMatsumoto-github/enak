@@ -2,183 +2,277 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/common/Header.astro";
 import Footer from "../components/common/Footer.astro";
-
-const basicPrice = {
-    price: "2,800",
-    unit: "円 / 1時間",
-    conditions: ["最低利用時間: 3時間〜", "対象年齢: 0歳〜小学生"],
-};
-
-const options = [
-    { label: "土日祝日利用", price: "+20%割増" },
-    { label: "病児・病後児保育", price: "+500円 / 1時間" },
-    { label: "兄弟姉妹追加", price: "+500円 / 1時間（1人あたり）" },
-    { label: "早朝・夜間 (8:00前 / 18:00以降)", price: "+20%割増" },
-    { label: "交通費", price: "実費請求" },
-];
 ---
 
-<Layout title="料金・サービス | enak">
+<Layout title="アクティビティ | enak">
     <Header />
 
     <main class="flex-1 pt-16">
-        <!-- Page Title -->
-        <div class="bg-brand-light/30 py-12 text-center">
-            <h1
-                class="text-3xl font-bold text-brand-accent tracking-widest mb-2 font-en"
+        <!-- Hero Section -->
+        <div
+            class="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden"
+        >
+            <div class="absolute inset-0 z-0">
+                <img
+                    src="/hero.png"
+                    alt="Playing kids"
+                    class="w-full h-full object-cover opacity-70"
+                />
+                <!-- Placeholder -->
+                <div
+                    class="absolute inset-0 bg-brand-main/20 mix-blend-multiply"
+                >
+                </div>
+            </div>
+            <div
+                class="relative z-10 text-center px-5 text-white drop-shadow-md"
             >
-                SERVICE & PRICE
-            </h1>
-            <p class="text-sm text-brand-text/70">料金・サービス</p>
+                <h1 class="text-3xl md:text-5xl font-bold tracking-widest mb-4">
+                    SERVICE
+                </h1>
+                <p class="text-lg md:text-xl font-medium tracking-wide">
+                    指先から広がる、無限の世界
+                </p>
+            </div>
         </div>
 
         <div class="max-w-screen-md mx-auto px-5 py-20">
-            <!-- Pricing Main -->
-            <div
-                class="bg-white rounded-3xl shadow-sm border border-brand-light overflow-hidden mb-16"
-            >
-                <div
-                    class="bg-brand-main text-white text-center py-4 font-bold tracking-wider"
+            <!-- Intro -->
+            <div class="text-center mb-20">
+                <h2
+                    class="text-2xl font-bold text-brand-accent mb-6 leading-relaxed"
                 >
-                    ベーシックプラン
-                </div>
-                <div class="p-8 md:p-12 text-center">
-                    <div
-                        class="flex items-end justify-center gap-1 mb-6 text-brand-accent"
-                    >
-                        <span class="text-5xl font-bold tracking-tight"
-                            >{basicPrice.price}</span
-                        >
-                        <span class="text-lg pb-2 font-medium"
-                            >{basicPrice.unit}</span
-                        >
-                    </div>
-                    <ul class="inline-block text-left space-y-2 mb-8">
-                        {
-                            basicPrice.conditions.map((item) => (
-                                <li class="flex items-center gap-2 text-sm text-brand-text/80">
-                                    <span class="text-brand-main">●</span>
-                                    {item}
-                                </li>
-                            ))
-                        }
-                    </ul>
-                    <p class="text-xs text-gray-400 text-center">
-                        ※ 料金は全て税込表示です。
-                    </p>
-                </div>
+                    ただの託児ではありません。<br />
+                    独自の知育・体験を提供します。
+                </h2>
+                <p
+                    class="text-brand-text leading-loose text-justify md:text-center"
+                >
+                    enakでは、お子様の「やりたい！」「なにこれ？」という好奇心を大切にしています。<br
+                    />
+                    五感を刺激する遊びを通じて、心と脳の発達をサポートします。
+                </p>
             </div>
 
-            <!-- Options Table -->
-            <div class="mb-16">
-                <div class="text-center mb-10">
-                    <h2 class="text-xl font-bold text-brand-accent mb-2">
-                        オプション料金
-                    </h2>
-                    <div class="h-0.5 w-10 bg-brand-main mx-auto"></div>
-                </div>
-
+            <!-- Activity 1: Wheat Clay -->
+            <section class="mb-20">
                 <div
-                    class="bg-white rounded-2xl shadow-sm border border-brand-light overflow-hidden"
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm border border-brand-light"
                 >
-                    {
-                        options.map((option, index) => (
-                            <div
-                                class={`flex flex-col md:flex-row justify-between items-center p-4 md:p-6 ${index !== options.length - 1 ? "border-b border-brand-light" : ""}`}
-                            >
-                                <div class="font-bold text-brand-accent mb-1 md:mb-0">
-                                    {option.label}
-                                </div>
-                                <div class="text-brand-main font-bold">
-                                    {option.price}
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
-
-            <!-- Area & Campaign -->
-            <div class="mb-16">
-                <div class="text-center mb-10">
-                    <h2 class="text-xl font-bold text-brand-accent mb-2">
-                        対象エリア
-                    </h2>
-                    <div class="h-0.5 w-10 bg-brand-main mx-auto"></div>
-                </div>
-
-                <div
-                    class="bg-white rounded-2xl shadow-sm border border-brand-light p-8 md:p-10"
-                >
-                    <div class="mb-8">
-                        <h3
-                            class="font-bold text-lg text-brand-accent mb-3 flex items-center gap-2"
+                    <div class="md:flex">
+                        <div
+                            class="md:w-1/2 h-64 md:h-auto bg-brand-sub/20 relative"
                         >
-                            <span class="text-brand-main">📍</span> 対応エリア
-                        </h3>
-                        <p class="text-brand-text leading-relaxed">
-                            東京都内、および神奈川県横浜市北部・川崎市エリア（田園都市線沿線を中心）に対応しております。<br
+                            <img
+                                src="/images/activity-wheat-clay.png"
+                                alt="特製小麦粉粘土"
+                                class="w-full h-full object-cover"
                             />
-                            <span class="text-sm text-gray-500"
-                                >※
-                                具体的な対応可否については、お気軽にご相談ください。</span
+                        </div>
+                        <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                            <span
+                                class="text-xs font-bold text-brand-main bg-brand-light px-3 py-1 rounded-full w-fit mb-3"
+                                >感性を育む</span
                             >
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-brand-base/30 rounded-xl p-6 border border-brand-main/20"
-                    >
-                        <h3
-                            class="font-bold text-brand-main mb-3 flex items-center gap-2"
-                        >
-                            <span>✨</span> 近隣エリア限定キャンペーン
-                        </h3>
-                        <p class="text-sm text-brand-text mb-4">
-                            拠点（横浜市北部）近隣のエリアにつきましては、<br
-                                class="hidden md:block"
-                            />特別価格にてご案内しております。
-                        </p>
-                        <div class="bg-white rounded-lg p-5 text-center">
-                            <div class="text-brand-accent font-bold mb-3">
-                                対象：横浜市青葉区・川崎市宮前区
-                            </div>
-                            <div
-                                class="flex items-end justify-center gap-2 text-brand-main"
+                            <h3
+                                class="text-2xl font-bold text-brand-accent mb-4"
                             >
-                                <span
-                                    class="text-sm text-gray-400 line-through mb-1"
-                                    >通常 2,800円</span
+                                手作り小麦粉粘土
+                            </h3>
+                            <p
+                                class="text-sm text-brand-text/80 leading-relaxed mb-6"
+                            >
+                                防腐剤不使用、口に入れても安全な素材を一から手作り。<br
+                                />
+                                ちぎる、丸める、混ぜる...指先の感覚を刺激し、脳の発達を促します。
+                            </p>
+                            <div class="mt-auto text-right">
+                                <span class="text-lg font-bold text-brand-main"
+                                    >+500円</span
                                 >
-                                <span class="text-xl font-bold mb-1">→</span>
-                                <span class="text-4xl font-bold">2,500</span>
-                                <span class="text-sm font-bold pb-2"
-                                    >円 / 1時間</span
+                                <span class="text-xs text-gray-400"> / 回</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activity 2: Handprint Art -->
+            <section class="mb-20">
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm border border-brand-light"
+                >
+                    <div class="md:flex md:flex-row-reverse">
+                        <div
+                            class="md:w-1/2 h-64 md:h-auto bg-brand-main/20 relative"
+                        >
+                            <img
+                                src="/images/activity-handprint.png"
+                                alt="季節の手形アート"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                            <span
+                                class="text-xs font-bold text-brand-main bg-brand-light px-3 py-1 rounded-full w-fit mb-3"
+                                >成長の記録</span
+                            >
+                            <h3
+                                class="text-2xl font-bold text-brand-accent mb-4"
+                            >
+                                季節の手形足形アート
+                            </h3>
+                            <p
+                                class="text-sm text-brand-text/80 leading-relaxed mb-6"
+                            >
+                                0歳児さんの小さな手足を、季節のアート作品に仕上げます。<br
+                                />
+                                「今」しか残せない成長の記録は、パパ・ママへのプレゼントにも最適です。
+                            </p>
+                            <div class="mt-auto text-right">
+                                <span class="text-lg font-bold text-brand-main"
+                                    >無料</span
+                                >
+                                <span class="text-xs text-gray-400">
+                                    (条件あり)</span
                                 >
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- Link to Activity -->
-            <div
-                class="bg-brand-base rounded-2xl p-8 md:p-12 text-center border-2 border-brand-light border-dashed"
-            >
-                <h2 class="text-2xl font-bold text-brand-accent mb-4">
-                    <span class="text-brand-main">enak</span>だけの<br
-                        class="md:hidden"
-                    />特別な体験
-                </h2>
-                <p class="text-brand-text leading-relaxed mb-8">
-                    通常のシッティングだけでなく、知育遊びや製作などの<br />
-                    アクティビティオプションもご用意しております。
-                </p>
-                <a
-                    href="/activity"
-                    class="inline-block bg-white text-brand-main border-2 border-brand-main font-bold py-3 px-8 rounded-full hover:bg-brand-main hover:text-white transition-all shadow-sm"
+            <!-- Activity 3: Storytime -->
+            <section class="mb-20">
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm border border-brand-light"
                 >
-                    アクティビティ詳細を見る
+                    <div class="md:flex">
+                        <div
+                            class="md:w-1/2 h-64 md:h-auto bg-brand-sub/20 relative"
+                        >
+                            <img
+                                src="/images/activity-storytime.png"
+                                alt="絵本読み聞かせ"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                            <span
+                                class="text-xs font-bold text-brand-main bg-brand-light px-3 py-1 rounded-full w-fit mb-3"
+                                >言葉を育む</span
+                            >
+                            <h3
+                                class="text-2xl font-bold text-brand-accent mb-4"
+                            >
+                                絵本読み聞かせ
+                            </h3>
+                            <p
+                                class="text-sm text-brand-text/80 leading-relaxed mb-6"
+                            >
+                                厳選された良質な絵本を使用。<br />
+                                物語の世界を通じで想像力と言語感覚を養います。
+                            </p>
+                            <div class="mt-auto text-right">
+                                <span class="text-lg font-bold text-brand-main"
+                                    >無料</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activity 4: Massage -->
+            <section class="mb-20">
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm border border-brand-light"
+                >
+                    <div class="md:flex md:flex-row-reverse">
+                        <div
+                            class="md:w-1/2 h-64 md:h-auto bg-brand-main/20 relative"
+                        >
+                            <img
+                                src="/images/activity-massage.png"
+                                alt="わらべうたマッサージ"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                            <span
+                                class="text-xs font-bold text-brand-main bg-brand-light px-3 py-1 rounded-full w-fit mb-3"
+                                >心を育む</span
+                            >
+                            <h3
+                                class="text-2xl font-bold text-brand-accent mb-4"
+                            >
+                                わらべうたマッサージ
+                            </h3>
+                            <p
+                                class="text-sm text-brand-text/80 leading-relaxed mb-6"
+                            >
+                                昔ながらのわらべうたのリズムに乗せて優しくタッチ。<br
+                                />
+                                安心感を与え、情緒を安定させます。
+                            </p>
+                            <div class="mt-auto text-right">
+                                <span class="text-lg font-bold text-brand-main"
+                                    >無料</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activity 5: Eurhythmics -->
+            <section class="mb-20">
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm border border-brand-light"
+                >
+                    <div class="md:flex">
+                        <div
+                            class="md:w-1/2 h-64 md:h-auto bg-brand-sub/20 relative"
+                        >
+                            <img
+                                src="/images/activity-eurhythmics.png"
+                                alt="リトミック"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                            <span
+                                class="text-xs font-bold text-brand-main bg-brand-light px-3 py-1 rounded-full w-fit mb-3"
+                                >体を育む</span
+                            >
+                            <h3
+                                class="text-2xl font-bold text-brand-accent mb-4"
+                            >
+                                リトミック
+                            </h3>
+                            <p
+                                class="text-sm text-brand-text/80 leading-relaxed mb-6"
+                            >
+                                ピアノや打楽器の音に合わせて身体を動かし、<br />
+                                リズム感や聴く力を自然に育みます。
+                            </p>
+                            <div class="mt-auto text-right">
+                                <span class="text-lg font-bold text-brand-main"
+                                    >無料</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <div class="text-center">
+                <a
+                    href="/contact"
+                    class="bg-brand-main text-white font-bold py-4 px-12 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all text-xl"
+                >
+                    まずは面談を予約する
                 </a>
             </div>
         </div>
