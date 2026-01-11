@@ -158,22 +158,6 @@ const certifications = [
                             注文する時はいつも大盛り。「美味しそうに食べるね」とよく言われます！
                         </p>
                     </div>
-                    <div
-                        class="bg-white p-6 rounded-xl border-l-4 border-brand-main shadow-sm"
-                    >
-                        <h4
-                            class="text-brand-accent font-bold mb-3 flex items-start gap-3"
-                        >
-                            <span class="text-brand-main font-en text-xl"
-                                >Q.</span
-                            >
-                            <span>推しはいますか？</span>
-                        </h4>
-                        <p class="text-brand-text/90 leading-relaxed pl-8">
-                            名探偵コナンの”コナン＆赤井さん”推しです♡<br />
-                            ハリー・ポッターや海外の刑事ドラマも大好きで、最近は英語音声にして英語の勉強も始めました。
-                        </p>
-                    </div>
                 </div>
             </div>
 
@@ -201,28 +185,6 @@ const certifications = [
                             ))
                         }
                     </div>
-                </div>
-            </div>
-
-            <!-- Certifications Section -->
-            <div class="pt-20">
-                <SectionTitle en="License" ja="保有資格" />
-
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto"
-                >
-                    {
-                        certifications.map((cert) => (
-                            <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-brand-light/60 hover:shadow-md transition-all duration-300 group">
-                                <div class="w-10 h-10 rounded-full bg-brand-light/30 flex items-center justify-center text-brand-main group-hover:bg-brand-main group-hover:text-white transition-colors">
-                                    <span class="text-lg">✓</span>
-                                </div>
-                                <span class="font-medium text-brand-text tracking-wide">
-                                    {cert}
-                                </span>
-                            </div>
-                        ))
-                    }
                 </div>
             </div>
         </div>
