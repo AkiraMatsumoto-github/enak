@@ -131,7 +131,7 @@ import Schedule from "../components/features/Schedule.astro";
                     お問い合わせフォーム
                 </h2>
 
-                <form class="space-y-6">
+                <form class="space-y-6" id="contact-form">
                     <!-- Name -->
                     <div>
                         <label
@@ -220,6 +220,11 @@ import Schedule from "../components/features/Schedule.astro";
                             送信する
                         </button>
                     </div>
+                    <div
+                        id="form-status"
+                        class="hidden mt-4 p-4 rounded-lg text-center text-sm font-bold"
+                    >
+                    </div>
                 </form>
             </section>
         </div>
@@ -227,3 +232,87 @@ import Schedule from "../components/features/Schedule.astro";
 
     <Footer />
 </Layout>
+
+<script>
+    const form = document.getElementById("contact-form") as HTMLFormElement;
+    const statusDiv = document.getElementById("form-status");
+    const submitBtn = form?.querySelector(
+        'button[type="submit"]',
+    ) as HTMLButtonElement;
+    const originalBtnText = submitBtn?.innerText;
+
+    if (form) {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            if (!submitBtn || !statusDiv) return;
+
+            // Reset status
+            statusDiv.classList.add("hidden");
+            statusDiv.className =
+                "hidden mt-4 p-4 rounded-lg text-center text-sm font-bold";
+
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtn.innerText = "送信中...";
+            submitBtn.classList.add("opacity-50", "cursor-not-allowed");
+
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get("name"),
+                email: formData.get("email"),
+                type: formData.get("type"),
+                message: formData.get("message"),
+            };
+
+            try {
+                const response = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                statusDiv.classList.remove("hidden");
+
+                if (response.ok) {
+                    // Success
+                    statusDiv.classList.add(
+                        "bg-green-100",
+                        "text-green-700",
+                        "border",
+                        "border-green-200",
+                    );
+                    statusDiv.innerText =
+                        "お問い合わせありがとうございます。メッセージが送信されました。";
+                    form.reset();
+                } else {
+                    // Error
+                    throw new Error(
+                        result.error || result.message || "送信に失敗しました",
+                    );
+                }
+            } catch (error) {
+                // Error display
+                statusDiv.classList.remove("hidden");
+                statusDiv.classList.add(
+                    "bg-red-100",
+                    "text-red-700",
+                    "border",
+                    "border-red-200",
+                );
+                statusDiv.innerText =
+                    "エラーが発生しました: " +
+                    (error instanceof Error ? error.message : "不明なエラー");
+            } finally {
+                // Restore button
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
+                submitBtn.classList.remove("opacity-50", "cursor-not-allowed");
+            }
+        });
+    }
+</script>
