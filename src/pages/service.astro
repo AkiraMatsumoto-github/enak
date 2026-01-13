@@ -16,12 +16,10 @@ import Footer from "../components/common/Footer.astro";
                 <img
                     src="/hero.png"
                     alt="Playing kids"
-                    class="w-full h-full object-cover opacity-70"
+                    class="w-full h-full object-cover opacity-90"
                 />
                 <!-- Placeholder -->
-                <div
-                    class="absolute inset-0 bg-brand-main/20 mix-blend-multiply"
-                >
+                <div class="absolute inset-0 bg-white/30 backdrop-blur-[1px]">
                 </div>
             </div>
             <div
@@ -31,7 +29,7 @@ import Footer from "../components/common/Footer.astro";
                     SERVICE
                 </h1>
                 <p class="text-lg md:text-xl font-medium tracking-wide">
-                    指先から広がる、無限の世界
+                    「楽しい！」が見つかる、ワクワクな体験
                 </p>
             </div>
         </div>
@@ -42,8 +40,8 @@ import Footer from "../components/common/Footer.astro";
                 <h2
                     class="text-2xl font-bold text-brand-accent mb-6 leading-relaxed"
                 >
-                    ただの託児ではありません。<br />
-                    独自の知育・体験を提供します。
+                    一人ひとりのお子様に合わせた<br />
+                    楽しい遊び・体験を提供します。
                 </h2>
                 <p
                     class="text-brand-text leading-loose text-justify md:text-center"
@@ -53,6 +51,48 @@ import Footer from "../components/common/Footer.astro";
                     五感を刺激する遊びを通じて、心と脳の発達をサポートします。
                 </p>
             </div>
+            <!-- Activity 2: Handprint Art -->
+            <section class="mb-20">
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm border border-brand-light"
+                >
+                    <div class="md:flex md:flex-row-reverse">
+                        <div
+                            class="md:w-1/2 h-64 md:h-auto bg-brand-main/20 relative"
+                        >
+                            <img
+                                src="/images/activity-handprint.png"
+                                alt="季節の手形アート"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                            <h3
+                                class="text-2xl font-bold text-brand-accent mb-4"
+                            >
+                                季節の手形足形アート
+                            </h3>
+                            <p
+                                class="text-sm text-brand-text/80 leading-relaxed mb-6"
+                            >
+                                0歳児さんの小さな手足を、保育士のセンスで季節のアート作品に仕上げます。<br
+                                />
+                                「今」しか残せない成長の記録は、親御様に大変好評をいただいております。<br
+                                />
+                                手形足形のスタンプ台は赤ちゃんにも使用できる低刺激のものをご用意しております。
+                            </p>
+                            <div class="mt-auto text-right">
+                                <span class="text-lg font-bold text-brand-main"
+                                    >無料</span
+                                >
+                                <span class="text-xs text-gray-400">
+                                    (条件あり)</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Activity 1: Wheat Clay -->
             <section class="mb-20">
@@ -78,56 +118,15 @@ import Footer from "../components/common/Footer.astro";
                             <p
                                 class="text-sm text-brand-text/80 leading-relaxed mb-6"
                             >
-                                防腐剤不使用、口に入れても安全な素材を一から手作り。<br
+                                万が一、赤ちゃんが口に入れても安心な材料（食用）で丁寧に手作りしております。<br
                                 />
-                                ちぎる、丸める、混ぜる...指先の感覚を刺激し、脳の発達を促します。
+                                ちぎる、丸める、混ぜる...指先の感覚を刺激し、じっくりと取り組みながら指先の発達や想像力の（考え中）を促します。
                             </p>
                             <div class="mt-auto text-right">
                                 <span class="text-lg font-bold text-brand-main"
                                     >+500円</span
                                 >
                                 <span class="text-xs text-gray-400"> / 回</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Activity 2: Handprint Art -->
-            <section class="mb-20">
-                <div
-                    class="bg-white rounded-3xl overflow-hidden shadow-sm border border-brand-light"
-                >
-                    <div class="md:flex md:flex-row-reverse">
-                        <div
-                            class="md:w-1/2 h-64 md:h-auto bg-brand-main/20 relative"
-                        >
-                            <img
-                                src="/images/activity-handprint.png"
-                                alt="季節の手形アート"
-                                class="w-full h-full object-cover"
-                            />
-                        </div>
-                        <div class="p-8 md:w-1/2 flex flex-col justify-center">
-                            <h3
-                                class="text-2xl font-bold text-brand-accent mb-4"
-                            >
-                                季節の手形足形アート
-                            </h3>
-                            <p
-                                class="text-sm text-brand-text/80 leading-relaxed mb-6"
-                            >
-                                0歳児さんの小さな手足を、季節のアート作品に仕上げます。<br
-                                />
-                                「今」しか残せない成長の記録は、パパ・ママへのプレゼントにも最適です。
-                            </p>
-                            <div class="mt-auto text-right">
-                                <span class="text-lg font-bold text-brand-main"
-                                    >無料</span
-                                >
-                                <span class="text-xs text-gray-400">
-                                    (条件あり)</span
-                                >
                             </div>
                         </div>
                     </div>
