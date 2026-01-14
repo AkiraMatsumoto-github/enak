@@ -17,7 +17,7 @@ const { id } = Astro.params;
 const news = await getNewsDetail(id as string);
 ---
 
-<Layout title={`${news.title} | お知らせ | enak`}>
+<Layout title={`${news.title} | お知らせ | enak`} ogType="article">
     <Header />
 
     <main class="flex-1 pt-16">

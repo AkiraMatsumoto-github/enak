@@ -14,7 +14,50 @@ const response = await getNews({
 const news = response.contents;
 ---
 
-<Layout title="enak | ママと赤ちゃんを包み込む、プロフェッショナルの温もり">
+<Layout title="enak | たまプラーザ・川崎市宮前区のベビーシッター・産後ケア">
+    <script type="application/ld+json" is:inline>
+        {
+            "@context": "https://schema.org",
+            "@type": "ChildCare",
+            "name": "enak（エナ）",
+            "image": "https://babysitter-enak.com/logo.png",
+            "description": "子どもに寄り添うオンリーワンの保育。一人ひとりの個性と成長に合わせた、きめ細やかなシッティングでママと赤ちゃんの笑顔をサポートします。",
+            "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "神奈川県",
+                "addressLocality": "たまプラーザ周辺・川崎市宮前区・横浜市青葉区",
+                "addressCountry": "JP"
+            },
+            "areaServed": [
+                {
+                    "@type": "AdministrativeArea",
+                    "name": "東京都"
+                },
+                {
+                    "@type": "AdministrativeArea",
+                    "name": "神奈川県"
+                }
+            ],
+            "priceRange": "2,800円/時間〜",
+            "url": "https://babysitter-enak.com",
+            "telephone": "",
+            "email": "info@babysitter-enak.com",
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "06:00",
+                "closes": "23:00"
+            }
+        }
+    </script>
     <Header />
 
     <main class="flex-1 pt-16">

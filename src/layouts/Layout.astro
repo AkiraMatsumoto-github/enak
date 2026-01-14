@@ -6,11 +6,13 @@ import FloatingBaby from "../components/ui/FloatingBaby.astro";
 interface Props {
 	title: string;
 	description?: string;
+	ogType?: "website" | "article";
 }
 
 const {
 	title,
 	description = "ママと赤ちゃんを包み込む、プロフェッショナルの温もり。ベビーシッター・産後ケアのenak（エナ）。",
+	ogType = "website",
 } = Astro.props;
 ---
 
@@ -20,11 +22,12 @@ const {
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
+		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- OGP -->
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content={ogType} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={Astro.url} />
